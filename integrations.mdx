@@ -1,0 +1,135 @@
+---
+title: Integrations and Connections
+description: Learn how to connect Deni Irizbaev with third-party tools to enhance your documentation workflow.
+---
+
+## Overview
+
+Connect Deni Irizbaev to your favorite tools to automate workflows, sync data, and embed content seamlessly. You gain access to webhooks for real-time notifications, embedding options for dynamic content, and a robust API for custom integrations. These features supercharge your documentation by integrating with services like GitHub, Slack, and Zapier.
+
+<Callout kind="info">
+  Review your plan limits for webhook and API usage before setting up integrations.
+</Callout>
+
+## Supported Integrations
+
+Deni Irizbaev supports popular third-party services out of the box. Use the dashboard to enable connections quickly.
+
+<Columns cols={3}>
+  <Card title="GitHub" icon="github" href="https://dashboard.example.com/integrations/github">
+    Sync repositories and pull requests automatically.
+  </Card>
+  <Card title="Slack" icon="message-circle" href="https://dashboard.example.com/integrations/slack">
+    Receive notifications for documentation updates.
+  </Card>
+  <Card title="Zapier" icon="zap" href="https://dashboard.example.com/integrations/zapier">
+    Build no-code automations with 5000+ apps.
+  </Card>
+</Columns>
+
+## Setting Up Webhooks
+
+Webhooks notify external services about events like page updates or new comments. Follow these steps to configure one.
+
+<Steps>
+  <Step title="Create Webhook" icon="plus">
+    Navigate to `https://dashboard.example.com/settings/webhooks` and click "New Webhook".
+  </Step>
+  <Step title="Configure Events" icon="settings">
+    Select events such as `page.updated` or `comment.created`.
+  </Step>
+  <Step title="Add Endpoint" icon="link">
+    Enter your endpoint URL, like `https://your-webhook-url.com/webhook`.
+  </Step>
+  <Step title="Test and Save" icon="check-circle">
+    Send a test payload and save the webhook.
+  </Step>
+</Steps>
+
+Here is a sample webhook payload:
+
+<CodeGroup tabs="JSON">
+  ```json
+  {
+    "event": "page.updated",
+    "page_id": "doc_123abc",
+    "timestamp": "2024-10-15T10:30:00Z",
+    "user_id": "user_456def"
+  }
+  ```
+</CodeGroup>
+
+## Embedding External Content
+
+Embed content from external sources to enrich your docs. Choose the method based on your needs.
+
+<Tabs>
+  <Tab title="Iframe Embed" icon="layout">
+    Use iframes for dashboards or forms.
+
+    ```
+    <iframe src="https://example.com/dashboard" width="100%" height="400"></iframe>
+    ```
+
+    <Callout kind="tip">
+      Set `sandbox` attributes for security.
+    </Callout>
+  </Tab>
+  <Tab title="Script Embed" icon="code">
+    Load dynamic widgets via scripts.
+
+    ```
+    <script src="https://example.com/widget.js" data-key="YOUR_API_KEY"></script>
+    ```
+  </Tab>
+</Tabs>
+
+## API Access for Custom Connections
+
+Build custom integrations using the REST API at `https://api.example.com/v1`. Authenticate with `YOUR_API_KEY`.
+
+<ParamField header="Authorization" param-type="string" required="true">
+  Bearer `{YOUR_API_KEY}`.
+</ParamField>
+
+<ParamField query="page_id" param-type="string" required="false">
+  Filter by specific page.
+</ParamField>
+
+Retrieve integrations via API:
+
+<Request tabs="cURL,JavaScript">
+  ```bash
+  curl -X GET "https://api.example.com/v1/integrations" \
+    -H "Authorization: Bearer YOUR_API_KEY"
+  ```
+  ```javascript
+  const response = await fetch('https://api.example.com/v1/integrations', {
+    headers: { 'Authorization': 'Bearer YOUR_API_KEY' }
+  });
+  const data = await response.json();
+  ```
+</Request>
+
+<Response tabs="200">
+  ```json
+  {
+    "integrations": [
+      { "id": "int_001", "service": "github", "status": "active" }
+    ]
+  }
+  ```
+</Response>
+
+<Expandable title="Advanced: Custom Webhook Verification" default-open="false">
+  Verify webhook signatures using HMAC SHA-256.
+
+  ```javascript
+  const crypto = require('crypto');
+  const signature = 'sha256=' + crypto.createHmac('sha256', 'YOUR_WEBHOOK_SECRET')
+    .update(payload)
+    .digest('hex');
+  ```
+</Expandable>
+
+These integrations streamline your workflow. Start with webhooks for immediate notifications, then explore the API for deeper customizations.

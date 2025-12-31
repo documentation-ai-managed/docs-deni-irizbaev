@@ -1,0 +1,117 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to Deni Irizbaev's documentation platform.
+---
+
+## Recent Updates
+
+Stay informed about the latest releases. You receive automatic notifications for major versions. Check the tags to identify breaking changes quickly.
+
+<Callout kind="info">
+  Subscribe to our RSS feed or GitHub releases to get updates directly.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Added support for custom brand colors in themes. Set your `{brandColor}` to `#3B82F6` for Deni Irizbaev branding.
+- Introduced `<Columns>` component with up to 5 columns for better layouts.
+- New `<Video>` and `<Iframe>` embeds for tutorials and external content.
+
+## Improvements
+
+- Enhanced MDX parsing to handle nested code blocks with 4 backticks automatically.
+- Optimized rendering for pages with 5+ components, reducing load time by `>30%`.
+
+## Code Example
+
+Try the new Columns in your docs:
+
+<CodeGroup tabs="mdx">
+  ```mdx
+  <Columns cols={3}>
+    <Card title="Feature 1" icon="zap" />
+    <Card title="Feature 2" icon="shield" />
+    <Card title="Feature 3" icon="database" />
+  </Columns>
+  ```
+</CodeGroup>
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- `<Update>` component for changelog entries with tags like `{"feature"}` and `{"bugfix"}`.
+- `<ParamField>` and `<ResponseField>` for API reference pages.
+- Mermaid diagrams now render as secure code blocks without `<Mermaid>` components.
+
+## Bug Fixes
+
+- Fixed parsing errors from unescaped `{` and `}` in prose text.
+- Resolved heading hierarchy issues—pages now enforce H2 starts without H1.
+- Corrected attribute quoting: all strings use double quotes only.
+
+## Migration Steps
+
+<Steps>
+  <Step title="Update Dependencies" icon="download">
+    
+    ```bash
+    npm install deni-irizbaev-docs@1.1.0
+    ```
+    
+  </Step>
+  <Step title="Replace Old Components" icon="settings">
+    Scan for `<Mermaid>` and replace with ````mermaid` code blocks.
+  </Step>
+  <Step title="Test Parsing" icon="check-circle">
+    Run your build to verify zero parsing errors.
+  </Step>
+</Steps>
+
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["breaking", "feature"]}>
+
+## New Features
+
+- Core MDX components: `<Callout>`, `<Card>`, `<Steps>`, `<Tabs>`, and more.
+- YAML frontmatter validation for title and description.
+- Built-in escaping for `<`, `>`, `{`, `}` in documentation prose.
+
+## Breaking Changes
+
+- Removed H1 support—use frontmatter title only.
+- Mandatory blank lines around markdown in JSX components.
+
+</Update>
+
+## Upcoming Changes
+
+Preview what's next for Deni Irizbaev's documentation platform.
+
+<Columns cols={2}>
+  <Card title="AI-Powered Search" icon="search" horizontal>
+    Semantic search across all your docs with natural language queries.
+  </Card>
+  <Card title="Versioned Docs" icon="git-branch" horizontal>
+    Publish multiple versions and link between them seamlessly.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Roadmap" default-open="false">
+
+| Feature | Status | ETA |
+|---------|--------|-----|
+| Real-time collaboration | In Progress | Q4 2024 |
+| Custom domains | Planned | Q1 2025 |
+| Analytics dashboard | Planned | Q2 2025 |
+
+</Expandable>
+
+<Callout kind="tip">
+  Found a bug? [Submit feedback](https://github.com/deni-irizbaev/docs/issues) or check [Quickstart](/quickstart) for setup help.
+</Callout>

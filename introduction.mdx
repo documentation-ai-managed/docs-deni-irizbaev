@@ -1,0 +1,114 @@
+---
+title: Introduction to Deni Irizbaev
+description: Welcome to Deni Irizbaev's documentation space, a centralized hub for organizing and managing all your project documentation with ease.
+---
+
+## Overview
+
+Welcome to Deni Irizbaev's documentation platform. You get a centralized space to organize, manage, and share all your project documentation effortlessly. Build knowledge bases, API references, and guides tailored to your needs with intuitive tools and seamless collaboration.
+
+This platform empowers you to create structured docs, embed code examples, and maintain version history without complexity. Start documenting your projects today and keep your team aligned.
+
+## Key Features
+
+Discover the core capabilities that make Deni Irizbaev's documentation space powerful and user-friendly.
+
+<Columns cols={3}>
+  <Card title="Intuitive Editor" icon="edit-3" href="#editor">
+    Write in Markdown with live previews. Embed components like tabs and cards for rich content.
+  </Card>
+  <Card title="Version Control" icon="git-branch" href="#versions">
+    Track changes with git integration. Roll back to previous versions instantly.
+  </Card>
+  <Card title="Search & Navigation" icon="search" href="#navigation">
+    Full-text search across all docs. Sidebar navigation keeps you oriented.
+  </Card>
+  <Card title="Custom Branding" icon="palette" href="#branding">
+    Apply your brand colors and logos. Use `#3B82F6` for primary accents.
+  </Card>
+</Columns>
+
+## Quick Start
+
+Get up and running in minutes with these essential steps.
+
+<Steps>
+  <Step title="Create Account" icon="user-plus">
+    Sign up at `https://deni-irizbaev.example.com/register` with your email.
+  </Step>
+  <Step title="New Workspace" icon="plus">
+    Click **New Workspace** and name it for your project.
+  </Step>
+  <Step title="Add First Page" icon="file-plus">
+    Select **New Page**, choose `introduction.mdx`, and start editing.
+  </Step>
+  <Step title="Publish" icon="globe">
+    Hit **Publish** to make your docs live and share the URL.
+  </Step>
+</Steps>
+
+<Callout kind="tip">
+  Pro tip: Use the preview mode to test components like `<Columns>` before publishing.
+</Callout>
+
+## Navigation Guide
+
+Access content quickly using these options.
+
+<Tabs>
+  <Tab title="Sidebar" icon="layout-sidebar">
+    Use the left sidebar for page hierarchy. Expand sections to drill down.
+  </Tab>
+  <Tab title="Search" icon="search">
+    Press `<kbd>Ctrl</kbd>+<kbd>K</kbd>` or click the search icon. Query across all pages.
+  </Tab>
+  <Tab title="Quick Links" icon="link">
+    Jump to key pages:
+    
+    - [/quickstart](/quickstart)
+    - [/authentication](/authentication)
+    - [/changelog](/changelog)
+  </Tab>
+</Tabs>
+
+## Brand Guidelines
+
+Maintain consistency with your branding. The primary brand color is `#3B82F6`.
+
+<CodeGroup tabs="CSS,JSX">
+  ```css
+  :root {
+    --brand-primary: #3B82F6;
+  }
+  
+  .button {
+    background-color: var(--brand-primary);
+    color: white;
+  }
+  ```
+  ```jsx
+  const theme = {
+    primary: '#3B82F6',
+  };
+  
+  <Button style={{ backgroundColor: theme.primary }}>
+    Click Me
+  </Button>
+  ```
+</CodeGroup>
+
+<Expandable title="Advanced Customization" default-open="false">
+  Override defaults in your workspace settings:
+  
+  | Property       | Value      | Usage                  |
+  |----------------|------------|------------------------|
+  | Primary Color  | `#3B82F6` | Buttons, links, accents |
+  | Secondary Color| `#1E40AF` | Hover states           |
+  | Logo URL       | Custom     | Header branding        |
+  
+  Update via **Settings > Branding**.
+</Expandable>
+
+<Callout kind="info">
+  Ready to dive deeper? Check [Quickstart](/quickstart) for setup details or explore features in other sections.
+</Callout>
